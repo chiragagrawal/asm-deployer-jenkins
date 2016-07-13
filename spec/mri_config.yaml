@@ -1,0 +1,84 @@
+---
+#database_url: 'postgres://orion:Password123$@localhost/asm_dev'
+base_dir: '/opt/Dell/ASM/deployments'
+logger: "require 'logger'; Logger.new('/opt/Dell/ASM/deployments/asm_puppet.log')"
+locale: en
+debug_service_deployments: false
+
+# Directory of iPXE source code checkout. Used to build iPXE ISO images
+ipxe_src_dir: /opt/src/ipxe
+
+# URI to the LLDP microkernel ISO. Only smb:// or nfs:// are supported. If
+# localhost is used as the host it will be replaced at runtime with the local IP
+# that is routable by the intended client.
+lldp_iso_uri: smb://guest:guest@localhost/razor/asm/microkernel.iso
+
+# Directory to save generated ISOs to
+generated_iso_dir: /var/lib/razor/repo-store/asm/generated
+
+# URI where ISOs saved to `generated_iso_dir` will be accessible. Only smb:// or
+# nfs:// are supported. If localhost is used as the host it will be replaced at
+# runtime with the local IP that is routable by the intended client.
+generated_iso_dir_uri: smb://guest:guest@localhost/razor/asm/generated
+
+# Method of executing puppet configuration and inventory jobs:
+#
+# :local - jobs are directly executed on this torquebox host
+# :queue - jobs are placed on a queue for later execution by local or remote
+#          members of the torquebox cluster. work_queue must be set to the name
+#          of the queue to use. Note this generally must match the queue name
+#          used to set up the work Processor in torquebox.rb
+work_method: :local
+
+# TODO: sucks that this is duplicated in torquebox.rb
+work_queue: asm_jobs
+
+# Set to max "large" processes (aka puppet) to run concurrently to number processors
+large_process_concurrency: 2
+
+# Set large process concurrency to 2 hours
+large_process_max_runtime: 7200
+
+metrics_poller_concurrency: 4
+metrics_poller_timeout: 10
+metrics_poller_debug: false
+
+# For ASM Api access
+asm_api_user: 'system'
+asm_api_domain: 'ASMLOCAL'
+
+teardown_rules: "/opt/asm-deployer/rules/teardown"
+
+# Source of "secret" information, e.g. credentials, etc.
+#
+# :local - secret information is queried directly from database(s) running on
+#          localhost and files on the local filesystem
+# :rest - secret information is obtained from a REST service. url.asm_secrets
+#         must be set to the base URL of the service to call.
+secrets_source: :local
+
+# REST client configuration options. Generally these are passed straight through
+# as RestClient options. Exceptions are made for ssl_client_cert and
+# ssl_client_key which are expected to be file paths whereas RestClient expects
+# them to have already been run through various OpenSSL initialization methods.
+#
+# Example:
+#
+# http_client_options:
+#   ssl_ca_file: /etc/pki/tls/certs/ca-cert.pem
+#   ssl_client_cert: /etc/pki/tls/certs/localhost.crt
+#   ssl_client_key: /etc/pki/tls/certs/localhost.key
+http_client_options: {}
+
+url:
+  asm: http://asm-core-api:9080
+  asm_server: http://asm-core-api:9080/AsmManager/Server
+  asm_network: http://asm-core-api:9080/VirtualServices/Network
+  asm_chassis: http://asm-core-api:9080/AsmManager/Chassis
+  asm_device: http://asm-core-api:9080/AsmManager/ManagedDevice
+  asm_deployer: http://asm-deployer-api:8081/asm
+  asm_secrets: http://asm-secrets-api:8081/asm/secret
+  razor: http://asm-razor-api:8080
+  puppetdb: http://asm-puppetdb-api:7080
+  nagios: http://asm-deployer-api:8081/asm/nagios
+  graphite: http://asm-deployer-api:8081/asm/graphite

@@ -1,0 +1,114 @@
+{ "vlan_information" : {
+  "1": {
+    "tagged_tengigabit": "Te1/1,Te1/2,Te1/3,Te1/4,Te1/5,Te1/6,Te1/7,Te1/8,Te1/10,Te1/11,Te1/12,Te1/13,Te1/14,Te1/15,Te1/16,Te1/18,Te1/22,Te1/23,Te1/24,Te1/25,Te1/26,Te1/28,Te1/32,Te102/1/2,Te102/1/3,Te102/1/4,Te102/1/5,Te102/1/6,Te102/1/7,Te102/1/8,Te102/1/9,Te102/1/10,Te102/1/11,Te102/1/12,Te102/1/13,Te102/1/14,Te102/1/15,Te102/1/16",
+    "untagged_tengigabit": "Te1/20,Te1/21,Te1/27,Te1/29,Te1/30,Te1/31",
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125,Po128",
+    "untagged_portchannel": {}
+  },
+  "18": {
+    "tagged_tengigabit": "Te1/17,Te1/20,Te1/21,Te1/29,Te1/30,Te1/31,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": "Te1/19",
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125,Po128",
+    "untagged_portchannel": {}
+  },
+  "20": {
+    "tagged_tengigabit": "Te1/17,Te1/19,Te1/20,Te1/21,Te1/27,Te1/29,Te1/30,Te1/31,Te102/1/1,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125,Po128",
+    "untagged_portchannel": {}
+  },
+  "22": {
+    "tagged_tengigabit": "Te1/17,Te1/19,Te1/20,Te1/21,Te1/29,Te1/30,Te1/31,Te102/1/1,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125,Po128",
+    "untagged_portchannel": {}
+  },
+  "23": {
+    "tagged_tengigabit": "Te1/17,Te1/19,Te1/20,Te1/21,Te1/27,Te1/29,Te1/30,Te1/31,Te102/1/1,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125,Po128",
+    "untagged_portchannel": {}
+  },
+  "24": {
+    "tagged_tengigabit": "Te1/21,Te1/29,Te1/30,Te102/1/1,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125",
+    "untagged_portchannel": {}
+  },
+  "28": {
+    "tagged_tengigabit": "Te1/17,Te1/19,Te1/20,Te1/21,Te1/27,Te1/29,Te1/30,Te1/31,Te102/1/1,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po125,Po128",
+    "untagged_portchannel": {}
+  },
+  "33": {
+    "tagged_tengigabit": "Te1/21,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": {},
+    "untagged_portchannel": {}
+  },
+  "36": {
+    "tagged_tengigabit": "Te1/21,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": {},
+    "untagged_portchannel": {}
+  },
+  "37": {
+    "tagged_tengigabit": "Te1/21,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": {},
+    "untagged_portchannel": {}
+  },
+  "50": {
+    "tagged_tengigabit": "Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": "Te1/21",
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": {},
+    "untagged_portchannel": {}
+  },
+  "256": {
+    "tagged_tengigabit": "Te1/21,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": {},
+    "untagged_portchannel": {}
+  },
+  "255": {
+    "tagged_tengigabit": "Te1/21,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": {},
+    "untagged_portchannel": {}
+  },
+  "1002": {
+    "tagged_tengigabit": "Te1/17,Te1/19,Te1/20,Te1/21,Te1/27,Te1/31,Te102/1/1,Te102/1/2,Te102/1/3",
+    "untagged_tengigabit": {},
+    "tagged_fortygigabit": {},
+    "untagged_fortygigabit": {},
+    "tagged_portchannel": "Po128",
+    "untagged_portchannel": {}
+  }
+}}

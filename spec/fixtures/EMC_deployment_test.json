@@ -1,0 +1,659 @@
+{
+  "id": "ff8080815522310701552532d8f70019",
+  "deploymentName": "deploylun",
+  "deploymentDescription": "",
+  "retry": "true",
+  "teardown": false,
+  "createdDate": 1465207937271,
+  "createdBy": "admin",
+  "updatedDate": 1465207946241,
+  "updatedBy": "admin",
+  "serviceTemplate": {
+    "id": "ff8080815522310701552531c3170018",
+    "templateName": "bootfromsan",
+    "templateDescription": "",
+    "templateVersion": null,
+    "templateValid": {
+      "valid": true,
+      "messages": [
+
+      ]
+    },
+    "templateLocked": false,
+    "draft": false,
+    "wizardPageNumber": null,
+    "createdDate": 1465207866135,
+    "createdBy": "admin",
+    "updatedDate": null,
+    "lastDeployedDate": null,
+    "updatedBy": null,
+    "components": [
+      {
+        "id": "02BC03BF-B178-4C58-A914-CCCDA4609030",
+        "componentID": "component-vnx-1",
+        "componentValid": {
+          "valid": true,
+          "messages": [
+
+          ]
+        },
+        "puppetCertName": "vnx-apm00132402069",
+        "name": "VNX",
+        "type": "STORAGE",
+        "subType": null,
+        "teardown": false,
+        "helpText": null,
+        "configFile": null,
+        "serialNumber": null,
+        "asmGUID": "vnx-172.17.7.83",
+        "relatedComponents": {
+
+        },
+        "associatedComponents": {
+          "entry": [
+
+          ]
+        },
+        "resources": [
+          {
+            "id": "asm::volume::vnx",
+            "displayName": "VNX Storage Settings",
+            "parameters": [
+              {
+                "id": "pool",
+                "value": "Pool 0",
+                "type": "STRING",
+                "displayName": "Pool Name",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "hari",
+                    "name": "hari",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vnx-172.17.7.83"
+                  },
+                  {
+                    "value": "Pool 0",
+                    "name": "Pool 0",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vnx-172.17.7.83"
+                  },
+                  {
+                    "value": "Pool 2",
+                    "name": "Pool 2",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vnx-172.17.7.83"
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "title",
+                "value": "createdbyasm",
+                "type": "STRING",
+                "displayName": "Storage Volume Name",
+                "required": true,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "size",
+                "value": "100GB",
+                "type": "STRING",
+                "displayName": "Storage Size e.g 100GB",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "title",
+                "dependencyValue": "createdbyasm",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "type",
+                "value": "nonthin",
+                "type": "ENUMERATED",
+                "displayName": "Type",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "title",
+                "dependencyValue": "createdbyasm",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "compressed",
+                    "name": "Compressed",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  },
+                  {
+                    "value": "nonthin",
+                    "name": "Non Thin",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  },
+                  {
+                    "value": "snap",
+                    "name": "Snap",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  },
+                  {
+                    "value": "thin",
+                    "name": "Thin",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "folder",
+                "value": "",
+                "type": "STRING",
+                "displayName": "Folder Name",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "title",
+                "dependencyValue": "createdbyasm",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              }
+            ]
+          }
+        ],
+        "refId": null,
+        "cloned": false,
+        "clonedFromId": null,
+        "brownfield": false,
+        "ip": null
+      }
+    ],
+    "category": "h",
+    "enableApps": false,
+    "enableCluster": false,
+    "enableServer": false,
+    "enableStorage": false,
+    "enableVMs": false,
+    "allUsersAllowed": false,
+    "assignedUsers": null,
+    "manageFirmware": false,
+    "firmwareRepository": null,
+    "attachments": null,
+    "componentsMap": {
+      "02BC03BF-B178-4C58-A914-CCCDA4609030": {
+        "id": "02BC03BF-B178-4C58-A914-CCCDA4609030",
+        "componentID": "component-vnx-1",
+        "componentValid": {
+          "valid": true,
+          "messages": [
+
+          ]
+        },
+        "puppetCertName": "vnx-apm00132402069",
+        "name": "VNX",
+        "type": "STORAGE",
+        "subType": null,
+        "teardown": false,
+        "helpText": null,
+        "configFile": null,
+        "serialNumber": null,
+        "asmGUID": "vnx-172.17.7.83",
+        "relatedComponents": {
+
+        },
+        "associatedComponents": {
+          "entry": [
+
+          ]
+        },
+        "resources": [
+          {
+            "id": "asm::volume::vnx",
+            "displayName": "VNX Storage Settings",
+            "parameters": [
+              {
+                "id": "pool",
+                "value": "Pool 0",
+                "type": "STRING",
+                "displayName": "Pool Name",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "hari",
+                    "name": "hari",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vnx-172.17.7.83"
+                  },
+                  {
+                    "value": "Pool 0",
+                    "name": "Pool 0",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vnx-172.17.7.83"
+                  },
+                  {
+                    "value": "Pool 2",
+                    "name": "Pool 2",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vnx-172.17.7.83"
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "title",
+                "value": "createdbyasm",
+                "type": "STRING",
+                "displayName": "Storage Volume Name",
+                "required": true,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "size",
+                "value": "100GB",
+                "type": "STRING",
+                "displayName": "Storage Size e.g 100GB",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "title",
+                "dependencyValue": "createdbyasm",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "type",
+                "value": "nonthin",
+                "type": "ENUMERATED",
+                "displayName": "Type",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "title",
+                "dependencyValue": "createdbyasm",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "compressed",
+                    "name": "Compressed",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  },
+                  {
+                    "value": "nonthin",
+                    "name": "Non Thin",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  },
+                  {
+                    "value": "snap",
+                    "name": "Snap",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  },
+                  {
+                    "value": "thin",
+                    "name": "Thin",
+                    "dependencyTarget": "",
+                    "dependencyValue": ""
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "folder",
+                "value": "",
+                "type": "STRING",
+                "displayName": "Folder Name",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "title",
+                "dependencyValue": "createdbyasm",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1,
+                "optionsSortable": true
+              }
+            ]
+          }
+        ],
+        "refId": null,
+        "cloned": false,
+        "clonedFromId": null,
+        "brownfield": false,
+        "ip": null
+      }
+    }
+  },
+  "scheduleDate": null,
+  "status": "error",
+  "compliant": true,
+  "deploymentDevice": [
+    {
+      "refId": "vnx-172.17.7.83",
+      "refType": "STORAGE",
+      "logDump": null,
+      "status": "cancelled",
+      "statusEndTime": null,
+      "statusStartTime": "2016-06-06 10:12:17 UTC",
+      "deviceHealth": "UNKNOWN",
+      "healthMessage": null,
+      "compliantState": "COMPLIANT",
+      "brownfieldStatus": "NOT_APPLICABLE",
+      "deviceType": "emcvnx",
+      "ipAddress": "172.17.7.83",
+      "serviceTag": "APM00132402069",
+      "componentId": "02BC03BF-B178-4C58-A914-CCCDA4609030",
+      "statusMessage": null,
+      "brownfield": false
+    }
+  ],
+  "vms": null,
+  "updateServerFirmware": false,
+  "firmwareRepository": null,
+  "firmwareRepositoryId": null,
+  "individualTeardown": false,
+  "deploymentHealthStatusType": "red",
+  "assignedUsers": null,
+  "allUsersAllowed": false,
+  "canScaleupStorage": true,
+  "canScaleupServer": true,
+  "canScaleupVM": true,
+  "canScaleupCluster": true,
+  "canScaleupNetwork": true,
+  "owner": "admin",
+  "canEdit": true,
+  "canDelete": true,
+  "canCancel": true,
+  "canDeleteResources": true,
+  "canRetry": true,
+  "canScaleupApplication": true,
+  "jobDetails": [
+    {
+      "level": "info",
+      "message": "Starting deployment deploylun",
+      "timestamp": "2016-06-06 10:12:18 UTC",
+      "execution_id": "1"
+    }
+  ],
+  "numberOfDeployments": 0,
+  "canMigrate": false,
+  "brownfield": false,
+  "templateValid": true,
+  "vds": false
+}
+

@@ -1,0 +1,2550 @@
+{
+  "id": "ff8080814e9b63c9014eae9427ab093e",
+  "deploymentName": "Migrate on failure",
+  "deploymentDescription": "",
+  "retry": "true",
+  "teardown": false,
+  "createdDate": 1437448021931,
+  "createdBy": "admin",
+  "updatedDate": 1437449506070,
+  "updatedBy": "admin",
+  "serviceTemplate": {
+    "id": "ff8080814e9b63c9014ea7aaa6b705a9",
+    "templateName": "Bare Metal",
+    "templateDescription": "",
+    "templateVersion": null,
+    "templateValid": {
+      "valid": true,
+      "messages": [
+
+      ]
+    },
+    "templateLocked": false,
+    "draft": false,
+    "wizardPageNumber": null,
+    "createdDate": 1437332055735,
+    "createdBy": "admin",
+    "updatedDate": null,
+    "lastDeployedDate": null,
+    "updatedBy": null,
+    "components": [
+      {
+        "id": "27EC1063-4B84-43E7-9577-62608B378614",
+        "componentID": "component-server-1",
+        "componentValid": {
+          "valid": true,
+          "messages": [
+
+          ]
+        },
+        "puppetCertName": "bladeserver-hv7qqv1",
+        "name": "Server",
+        "type": "SERVER",
+        "teardown": false,
+        "helpText": null,
+        "configFile": null,
+        "serialNumber": null,
+        "asmGUID": "ff8080814e95840a014e958b0e640110",
+        "relatedComponents": {
+
+        },
+        "resources": [
+          {
+            "id": "asm::baseserver",
+            "displayName": "Base server for migration",
+            "parameters": [
+              {
+                "id": "serialnumber",
+                "value": "6D4QQV1",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "bladeserver-6d4qqv1",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "os_host_name",
+                "value": "gs1centos2",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          },
+          {
+            "id": "asm::idrac",
+            "displayName": "Hardware Settings",
+            "parameters": [
+              {
+                "id": "target_boot_device",
+                "value": "HD",
+                "type": "ENUMERATED",
+                "displayName": "Target Boot Device",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "",
+                    "name": "Select...",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "NONE",
+                    "name": "None",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "NONE_WITH_RAID",
+                    "name": "None (With RAID Configuration)",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "SD",
+                    "name": "SD Card",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "HD",
+                    "name": "Local Hard Drive",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "iSCSI",
+                    "name": "Boot From SAN (iSCSI)",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "FC",
+                    "name": "Boot From SAN (FC)",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "raid_configuration",
+                "value": "{\"raidtype\":\"basic\",\"basicraidlevel\":\"raid1\",\"enableglobalhotspares\":false,\"globalhotspares\":0,\"minimumssd\":0,\"virtualdisks\":[]}",
+                "type": "RAIDCONFIGURATION",
+                "displayName": "RAID",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "target_boot_device",
+                "dependencyValue": "HD,NONE_WITH_RAID",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": {
+                  "virtualDisks": [
+                    {
+                      "raidLevel": "raid1",
+                      "physicalDisks": [
+                        "Disk.Bay.1:Enclosure.Internal.0-1:RAID.Integrated.1-1",
+                        "Disk.Bay.0:Enclosure.Internal.0-1:RAID.Integrated.1-1"
+                      ],
+                      "controller": "RAID.Integrated.1-1",
+                      "configuration": {
+                        "id": "fdefd570-0cc2-4ac1-8c34-e2eda671c0fe",
+                        "raidlevel": "raid1",
+                        "comparator": "minimum",
+                        "numberofdisks": 2,
+                        "disktype": "any"
+                      },
+                      "mediaType": "ANY"
+                    }
+                  ],
+                  "hddHotSpares": [
+
+                  ],
+                  "ssdHotSpares": [
+
+                  ]
+                },
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "migrate_on_failure",
+                "value": "true",
+                "type": "BOOLEAN",
+                "displayName": "Migrate On Failure",
+                "required": false,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": "pool",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": "Migrate deployment to another server if failed",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "attempted_servers",
+                "value": "[\"ff8080814e95840a014e958a84f500bd\"]",
+                "type": "STRING",
+                "displayName": "Attempted Servers",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "bladeserver-hv7qqv1",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          },
+          {
+            "id": "asm::bios",
+            "displayName": "BIOS Settings",
+            "parameters": [
+              {
+                "id": "bios_configuration",
+                "value": "basic",
+                "type": "BIOSCONFIGURATION",
+                "displayName": "BIOS Settings",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "SysProfile",
+                "value": "PerfOptimized",
+                "type": "ENUMERATED",
+                "displayName": "System Profile",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "PerfPerWattOptimizedDapc",
+                    "name": "Performance Per Watt (DAPC)",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "PerfPerWattOptimizedOs",
+                    "name": "Performance Per Watt (OS)",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "PerfOptimized",
+                    "name": "Performance",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "DenseCfgOptimized",
+                    "name": "Dense Configuration",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Custom",
+                    "name": "Custom",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "UsbPorts",
+                "value": "AllOn",
+                "type": "ENUMERATED",
+                "displayName": "User Accessible USB Ports",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "AllOn",
+                    "name": "All Ports On",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "AllOff",
+                    "name": "All Ports Off",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "OnlyBackPortsOn",
+                    "name": "Only Back Ports On",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ProcCores",
+                "value": "All",
+                "type": "ENUMERATED",
+                "displayName": "Number of Cores per Processor",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "All",
+                    "name": "All",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "1",
+                    "name": "1",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "2",
+                    "name": "2",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "4",
+                    "name": "4",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "6",
+                    "name": "6",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ProcVirtualization",
+                "value": "Enabled",
+                "type": "ENUMERATED",
+                "displayName": "Virtualization Technology",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Enabled",
+                    "name": "Enabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Disabled",
+                    "name": "Disabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "LogicalProc",
+                "value": "Enabled",
+                "type": "ENUMERATED",
+                "displayName": "Logical Processor",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Enabled",
+                    "name": "Enabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Disabled",
+                    "name": "Disabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ProcExecuteDisable",
+                "value": "Enabled",
+                "type": "ENUMERATED",
+                "displayName": "Execute Disable",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Enabled",
+                    "name": "Enabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Disabled",
+                    "name": "Disabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "NodeInterleave",
+                "value": "Enabled",
+                "type": "ENUMERATED",
+                "displayName": "Node Interleaving",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "n/a",
+                    "name": "Not Applicable",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Enabled",
+                    "name": "Enabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Disabled",
+                    "name": "Disabled",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "bladeserver-hv7qqv1",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          },
+          {
+            "id": "asm::server",
+            "displayName": "OS Settings",
+            "parameters": [
+              {
+                "id": "os_host_name",
+                "value": "gs1centos3",
+                "type": "STRING",
+                "displayName": "Host Name",
+                "required": true,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": "false",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "os_image_type",
+                "value": "redhat7",
+                "type": "ENUMERATED",
+                "displayName": "OS Image Type",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "target_boot_device",
+                "dependencyValue": "SD,HD",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "razor_image",
+                "value": "CentOS7",
+                "type": "ENUMERATED",
+                "displayName": "OS Image",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "target_boot_device",
+                "dependencyValue": "SD,HD",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "",
+                    "name": "Select...",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "esxi-5.1",
+                    "name": "esxi-5.1",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "esxi-5.5",
+                    "name": "esxi-5.5",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "esxi-6.0",
+                    "name": "esxi-6.0",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "CentOS7",
+                    "name": "CentOS 7",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": "Location of OS image installation files",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "admin_password",
+                "value": "ff8080814e9b63c9014eae942467093c",
+                "type": "PASSWORD",
+                "displayName": "Administrator password",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "target_boot_device",
+                "dependencyValue": "SD,HD",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": "OS administrator password set on the installed OS",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "time_zone",
+                "value": "America/Chicago",
+                "type": "ENUMERATED",
+                "displayName": "Timezone",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "razor_image",
+                "dependencyValue": "CentOS7",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ntp_server",
+                "value": "143.166.226.32",
+                "type": "STRING",
+                "displayName": "NTP Server",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "razor_image",
+                "dependencyValue": "CentOS7,esxi-5.1,esxi-5.5,esxi-6.0",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "bladeserver-hv7qqv1",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          },
+          {
+            "id": "asm::esxiscsiconfig",
+            "displayName": "Network Settings",
+            "parameters": [
+              {
+                "id": "network_configuration",
+                "value": "{\"id\":\"675F8A29-D5BB-46F1-BE19-EA1E234C83F3\",\"servertype\":\"blade\",\"fabrics\":[{\"id\":\"B24FE8BF-AD96-4210-8F34-BF1F27D7AAC4\",\"name\":\"Fabric A\",\"redundancy\":false,\"enabled\":true,\"usedforfc\":false,\"nictype\":\"2\",\"interfaces\":[{\"id\":\"E20D2ADD-52D0-42B1-B0F4-4BA5DBC1B3D4\",\"name\":\"Port 1\",\"partitioned\":false,\"partitions\":[{\"id\":\"F913E8A3-D88A-4CF4-B12A-87B1E657EF00\",\"name\":\"1\",\"networks\":[\"ff8080814e95840a014e9587c68b0049\"],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"29A734ED-D4B6-49A6-AB3E-C9D223C7AF56\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"B90266D9-E3AD-4B0C-B6D1-C2D8E6CF41BC\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"55A56318-C69F-4D4B-93C6-48B7175FC6BB\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"B4BDB864-C960-4532-85A9-ADABA3AEDF3D\",\"name\":\"Port 2\",\"partitioned\":false,\"partitions\":[{\"id\":\"614E7E32-F331-4B0E-9EBB-CFACBF24B12B\",\"name\":\"1\",\"networks\":[\"ff8080814e95840a014e9587c5c70048\"],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"A133D256-98D9-4BED-833A-CD6441C3F248\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"AB1A8370-45F6-4BCC-ADD5-7886609C6B7E\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"70A6B305-903B-47C6-B473-6574ED4E384D\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"05404F1F-2A20-41BE-B0B3-1D56EA859A92\",\"name\":\"Port 3\",\"partitioned\":false,\"partitions\":[{\"id\":\"CDB58562-916F-4BEC-8DA2-0CD6E3D32A87\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"1D798D57-3276-42E0-AE11-0025073D2CFE\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"DA4079A1-1BA2-404A-97EA-AAEBA5034A1F\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"FADA0EDE-EEF0-4674-9A22-FAF0977FF2BD\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"8561550C-D6BC-462E-BE47-CB9AC250268C\",\"name\":\"Port 4\",\"partitioned\":false,\"partitions\":[{\"id\":\"C5C9646D-2492-4BA9-89D9-C7B5928C8A91\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"AD45E998-3EB3-4469-99F7-373FE039281F\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"CB9E7890-FE75-4226-9847-85A51C1BBE78\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"EE160A28-EAA9-4913-A639-6812D8F965E9\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null}]},{\"id\":\"B49AB732-2AC7-4E71-ABF4-2777452C548A\",\"name\":\"Fabric B\",\"redundancy\":false,\"enabled\":false,\"usedforfc\":false,\"nictype\":\"2\",\"interfaces\":[{\"id\":\"3F8793E9-B098-46C9-84F5-019EAA149BEB\",\"name\":\"Port 1\",\"partitioned\":true,\"partitions\":[{\"id\":\"873B663F-CF05-47C9-80DD-75272A754926\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"21453F4F-353B-435B-9200-60F1B0D7D51C\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"316F4A37-16F3-4C30-9FE7-8F4A2067B904\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"4F0C0AF4-BB4A-44E3-9613-AC721C0E7FD0\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"55AF951C-9F82-483F-B9CA-4755FD82EC66\",\"name\":\"Port 2\",\"partitioned\":true,\"partitions\":[{\"id\":\"A1E82994-B980-431C-AC36-56C7B996DB23\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"B595E33F-6E64-4C7B-BB6C-FB5B106FC0CA\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"03B94AD8-B4E3-40F3-8374-FD658CBD9247\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"1EDC265E-A13B-468A-9C2D-E2FBD6DF2ABE\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"B819C28B-D82D-4348-9216-6DB26A256025\",\"name\":\"Port 3\",\"partitioned\":true,\"partitions\":[{\"id\":\"FF9CE12E-4AD5-4840-BC15-A3E821108BA7\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"FD04C4AB-A477-41C6-8292-25E55FE7CEA9\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"CCF1B646-00CA-4BA8-B50B-52E85FED9EFF\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"5CA263EF-940E-4384-8461-5CEAE02DF498\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"BDF52809-D8E1-4E04-B2DE-CF3E2138F254\",\"name\":\"Port 4\",\"partitioned\":true,\"partitions\":[{\"id\":\"8B1367A4-C235-44BC-A5E3-C9433A5C7E34\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"698268A7-E3EC-4A2C-87BA-B5EE50B5E690\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"ED1FAAC5-2C08-46B3-AE86-36F36010EE5F\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"AAA9E371-8EA0-4429-A030-4E1DB3A85489\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null}]},{\"id\":\"27BC87EE-9827-4269-9EC1-904488F33C81\",\"name\":\"Fabric C\",\"redundancy\":false,\"enabled\":false,\"usedforfc\":false,\"nictype\":\"2\",\"interfaces\":[{\"id\":\"3FA372BF-D1EC-4BC0-8988-F432B8CA10FF\",\"name\":\"Port 1\",\"partitioned\":true,\"partitions\":[{\"id\":\"CFA83976-D524-4DCD-8A11-28D8097E14E2\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"4CEF72E2-673B-4B94-BB62-77B0BB53461B\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"010DCC7C-6B6E-495C-8E1F-11A7A8C5951D\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"6D8696A7-B78C-42F9-93E5-D5647D0510EA\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"0C0660B3-EF70-4805-A4E4-A89AF4A84C72\",\"name\":\"Port 2\",\"partitioned\":true,\"partitions\":[{\"id\":\"E0FD2273-91F0-48B6-9C5B-CB153C510D4B\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"88B7FC6B-C46E-467C-B5FE-932E3835A88C\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"BFBBC69D-0A91-459A-A0E3-F81C045F1003\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"A6C57F14-CA79-4145-B773-4003BC100B0B\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"E6812586-8071-4FD6-8C2F-DAE49CA8A401\",\"name\":\"Port 3\",\"partitioned\":true,\"partitions\":[{\"id\":\"AD870C5E-B7A8-4C9D-8757-9F2EE3A95A44\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"52A15264-3133-469F-9E20-3FD4FC939E38\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"A77AB44E-D144-4A96-8743-81D6DBE96781\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"4C3E6007-7601-4617-A831-154FCC081DFB\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null},{\"id\":\"D6726860-A847-4CF4-B4F7-A76643F17DA9\",\"name\":\"Port 4\",\"partitioned\":true,\"partitions\":[{\"id\":\"88F1FA46-38CD-40C7-B2C8-FCC558382BDF\",\"name\":\"1\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"9D71B49E-BDB9-4EF2-8EED-0C3ECB077747\",\"name\":\"2\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"CFB7F8B3-4D96-4321-989A-AB6151C3F76B\",\"name\":\"3\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null},{\"id\":\"659F1D27-8FC5-4EB4-9CFE-2BAD7BA5E609\",\"name\":\"4\",\"networks\":[],\"networkObjects\":null,\"minimum\":0,\"maximum\":100,\"lanMacAddress\":null,\"iscsiMacAddress\":null,\"iscsiIQN\":null,\"wwnn\":null,\"wwpn\":null}],\"interfaces\":null,\"enabled\":false,\"redundancy\":false,\"usedforfc\":false,\"nictype\":null}]}],\"interfaces\":[]}",
+                "type": "NETWORKCONFIGURATION",
+                "displayName": "Network Config",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": {
+                  "id": "675F8A29-D5BB-46F1-BE19-EA1E234C83F3",
+                  "servertype": "blade",
+                  "fabrics": [
+                    {
+                      "id": "B24FE8BF-AD96-4210-8F34-BF1F27D7AAC4",
+                      "name": "Fabric A",
+                      "redundancy": false,
+                      "enabled": true,
+                      "usedforfc": false,
+                      "nictype": "2",
+                      "interfaces": [
+                        {
+                          "id": "E20D2ADD-52D0-42B1-B0F4-4BA5DBC1B3D4",
+                          "name": "Port 1",
+                          "partitioned": false,
+                          "partitions": [
+                            {
+                              "id": "F913E8A3-D88A-4CF4-B12A-87B1E657EF00",
+                              "name": "1",
+                              "networks": [
+                                "ff8080814e95840a014e9587c68b0049"
+                              ],
+                              "networkObjects": [
+                                {
+                                  "id": "ff8080814e95840a014e9587c68b0049",
+                                  "name": "Workload",
+                                  "description": null,
+                                  "type": "PRIVATE_LAN",
+                                  "vlanId": 20,
+                                  "static": false,
+                                  "staticNetworkConfiguration": null
+                                }
+                              ],
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "00:0E:AA:BC:00:02",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "29A734ED-D4B6-49A6-AB3E-C9D223C7AF56",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "B90266D9-E3AD-4B0C-B6D1-C2D8E6CF41BC",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "55A56318-C69F-4D4B-93C6-48B7175FC6BB",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "B4BDB864-C960-4532-85A9-ADABA3AEDF3D",
+                          "name": "Port 2",
+                          "partitioned": false,
+                          "partitions": [
+                            {
+                              "id": "614E7E32-F331-4B0E-9EBB-CFACBF24B12B",
+                              "name": "1",
+                              "networks": [
+                                "ff8080814e95840a014e9587c5c70048"
+                              ],
+                              "networkObjects": [
+                                {
+                                  "id": "ff8080814e95840a014e9587c5c70048",
+                                  "name": "PXE",
+                                  "description": null,
+                                  "type": "PXE",
+                                  "vlanId": 18,
+                                  "static": false,
+                                  "staticNetworkConfiguration": null
+                                }
+                              ],
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "A133D256-98D9-4BED-833A-CD6441C3F248",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "AB1A8370-45F6-4BCC-ADD5-7886609C6B7E",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "70A6B305-903B-47C6-B473-6574ED4E384D",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "05404F1F-2A20-41BE-B0B3-1D56EA859A92",
+                          "name": "Port 3",
+                          "partitioned": false,
+                          "partitions": [
+                            {
+                              "id": "CDB58562-916F-4BEC-8DA2-0CD6E3D32A87",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "1D798D57-3276-42E0-AE11-0025073D2CFE",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "DA4079A1-1BA2-404A-97EA-AAEBA5034A1F",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "FADA0EDE-EEF0-4674-9A22-FAF0977FF2BD",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "8561550C-D6BC-462E-BE47-CB9AC250268C",
+                          "name": "Port 4",
+                          "partitioned": false,
+                          "partitions": [
+                            {
+                              "id": "C5C9646D-2492-4BA9-89D9-C7B5928C8A91",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "AD45E998-3EB3-4469-99F7-373FE039281F",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "CB9E7890-FE75-4226-9847-85A51C1BBE78",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "EE160A28-EAA9-4913-A639-6812D8F965E9",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        }
+                      ]
+                    },
+                    {
+                      "id": "B49AB732-2AC7-4E71-ABF4-2777452C548A",
+                      "name": "Fabric B",
+                      "redundancy": false,
+                      "enabled": false,
+                      "usedforfc": false,
+                      "nictype": "2",
+                      "interfaces": [
+                        {
+                          "id": "3F8793E9-B098-46C9-84F5-019EAA149BEB",
+                          "name": "Port 1",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "873B663F-CF05-47C9-80DD-75272A754926",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "21453F4F-353B-435B-9200-60F1B0D7D51C",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "316F4A37-16F3-4C30-9FE7-8F4A2067B904",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "4F0C0AF4-BB4A-44E3-9613-AC721C0E7FD0",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "55AF951C-9F82-483F-B9CA-4755FD82EC66",
+                          "name": "Port 2",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "A1E82994-B980-431C-AC36-56C7B996DB23",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "B595E33F-6E64-4C7B-BB6C-FB5B106FC0CA",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "03B94AD8-B4E3-40F3-8374-FD658CBD9247",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "1EDC265E-A13B-468A-9C2D-E2FBD6DF2ABE",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "B819C28B-D82D-4348-9216-6DB26A256025",
+                          "name": "Port 3",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "FF9CE12E-4AD5-4840-BC15-A3E821108BA7",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "FD04C4AB-A477-41C6-8292-25E55FE7CEA9",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "CCF1B646-00CA-4BA8-B50B-52E85FED9EFF",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "5CA263EF-940E-4384-8461-5CEAE02DF498",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "BDF52809-D8E1-4E04-B2DE-CF3E2138F254",
+                          "name": "Port 4",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "8B1367A4-C235-44BC-A5E3-C9433A5C7E34",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "698268A7-E3EC-4A2C-87BA-B5EE50B5E690",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "ED1FAAC5-2C08-46B3-AE86-36F36010EE5F",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "AAA9E371-8EA0-4429-A030-4E1DB3A85489",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        }
+                      ]
+                    },
+                    {
+                      "id": "27BC87EE-9827-4269-9EC1-904488F33C81",
+                      "name": "Fabric C",
+                      "redundancy": false,
+                      "enabled": false,
+                      "usedforfc": false,
+                      "nictype": "2",
+                      "interfaces": [
+                        {
+                          "id": "3FA372BF-D1EC-4BC0-8988-F432B8CA10FF",
+                          "name": "Port 1",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "CFA83976-D524-4DCD-8A11-28D8097E14E2",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "4CEF72E2-673B-4B94-BB62-77B0BB53461B",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "010DCC7C-6B6E-495C-8E1F-11A7A8C5951D",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "6D8696A7-B78C-42F9-93E5-D5647D0510EA",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "0C0660B3-EF70-4805-A4E4-A89AF4A84C72",
+                          "name": "Port 2",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "E0FD2273-91F0-48B6-9C5B-CB153C510D4B",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "88B7FC6B-C46E-467C-B5FE-932E3835A88C",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "BFBBC69D-0A91-459A-A0E3-F81C045F1003",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "A6C57F14-CA79-4145-B773-4003BC100B0B",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "E6812586-8071-4FD6-8C2F-DAE49CA8A401",
+                          "name": "Port 3",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "AD870C5E-B7A8-4C9D-8757-9F2EE3A95A44",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "52A15264-3133-469F-9E20-3FD4FC939E38",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "A77AB44E-D144-4A96-8743-81D6DBE96781",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "4C3E6007-7601-4617-A831-154FCC081DFB",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        },
+                        {
+                          "id": "D6726860-A847-4CF4-B4F7-A76643F17DA9",
+                          "name": "Port 4",
+                          "partitioned": true,
+                          "partitions": [
+                            {
+                              "id": "88F1FA46-38CD-40C7-B2C8-FCC558382BDF",
+                              "name": "1",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "9D71B49E-BDB9-4EF2-8EED-0C3ECB077747",
+                              "name": "2",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "CFB7F8B3-4D96-4321-989A-AB6151C3F76B",
+                              "name": "3",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            },
+                            {
+                              "id": "659F1D27-8FC5-4EB4-9CFE-2BAD7BA5E609",
+                              "name": "4",
+                              "networks": [
+
+                              ],
+                              "networkObjects": null,
+                              "minimum": 0,
+                              "maximum": 100,
+                              "lanMacAddress": "",
+                              "iscsiMacAddress": "",
+                              "iscsiIQN": "",
+                              "wwnn": "",
+                              "wwpn": ""
+                            }
+                          ],
+                          "interfaces": [
+                            {
+                              "id": null,
+                              "name": null,
+                              "partitioned": false,
+                              "partitions": null,
+                              "interfaces": null,
+                              "enabled": false,
+                              "redundancy": false,
+                              "usedforfc": false,
+                              "nictype": null
+                            }
+                          ],
+                          "enabled": false,
+                          "redundancy": false,
+                          "usedforfc": false,
+                          "nictype": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "interfaces": [
+
+                  ]
+                },
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "identity_pool",
+                "value": "-1",
+                "type": "ENUMERATED",
+                "displayName": "Identity Pool",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "-1",
+                    "name": "Global",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": "Pool from which virtual identities are selected during deployment",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "bladeserver-hv7qqv1",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "refId": null,
+        "cloned": null,
+        "clonedFromId": null,
+        "manageFirmware": false,
+        "ip": null
+      }
+    ],
+    "category": "gavin",
+    "enableApps": false,
+    "enableCluster": false,
+    "enableServer": false,
+    "enableStorage": false,
+    "enableVMs": false,
+    "allUsersAllowed": false,
+    "assignedUsers": null,
+    "manageFirmware": false,
+    "firmwareRepository": null,
+    "attachments": null
+  },
+  "scheduleDate": null,
+  "status": "error",
+  "deploymentDevice": [
+    {
+      "refId": "ff8080814e95840a014e958a84f500bd",
+      "refType": "SERVER",
+      "logDump": null,
+      "status": "error",
+      "statusEndTime": "2015-07-20 22:31:45 -0500",
+      "statusStartTime": "2015-07-20 22:16:26 -0500",
+      "deviceType": "BladeServer",
+      "ipAddress": "172.17.9.195",
+      "serviceTag": "6D4QQV1",
+      "componentId": "27EC1063-4B84-43E7-9577-62608B378614",
+      "statusMessage": "Server deployment failed"
+    }
+  ],
+  "vms": null,
+  "updateServerFirmware": false,
+  "firmwareRepository": null,
+  "firmwareRepositoryId": null,
+  "individualTeardown": false,
+  "numberOfDeployments": 0,
+  "assignedUsers": [
+
+  ],
+  "allUsersAllowed": false,
+  "canMigrate": false,
+  "canScaleupStorage": true,
+  "canScaleupServer": true,
+  "canScaleupVM": true,
+  "canScaleupCluster": true,
+  "canScaleupNetwork": true,
+  "owner": "admin",
+  "canEdit": true,
+  "canDelete": true,
+  "canCancel": true,
+  "canDeleteResources": true,
+  "canRetry": true,
+  "canScaleupApplication": true,
+  "jobDetails": [
+    {
+      "level": "info",
+      "message": "Starting deployment Migrate on failure",
+      "timestamp": "2015-07-20 22:16:26 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Refreshing switch inventory data",
+      "timestamp": "2015-07-20 22:16:31 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Configuring blade networking",
+      "timestamp": "2015-07-20 22:17:17 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Configuring tagged VLANs for dell_iom-172.17.9.171",
+      "timestamp": "2015-07-20 22:18:49 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Configuring 6D4QQV1 172.17.9.195 server ports on IOM 172.17.9.171",
+      "timestamp": "2015-07-20 22:18:49 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Configuring tagged VLANs for dell_iom-172.17.9.174",
+      "timestamp": "2015-07-20 22:20:14 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Configuring 6D4QQV1 172.17.9.195 server ports on IOM 172.17.9.174",
+      "timestamp": "2015-07-20 22:20:14 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Finished processing switch components",
+      "timestamp": "2015-07-20 22:21:27 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Processing server components",
+      "timestamp": "2015-07-20 22:21:27 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Processing server: 6D4QQV1 172.17.9.195",
+      "timestamp": "2015-07-20 22:21:27 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "info",
+      "message": "Configuring BIOS for server: 6D4QQV1 172.17.9.195",
+      "timestamp": "2015-07-20 22:21:28 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "error",
+      "message": "BIOS configuration failed on 6D4QQV1 172.17.9.195. See \"View Logs\" for more details",
+      "timestamp": "2015-07-20 22:31:45 -0500",
+      "execution_id": "72"
+    },
+    {
+      "level": "error",
+      "message": "Server deployment failed",
+      "timestamp": "2015-07-20 22:31:45 -0500",
+      "execution_id": "72",
+      "component_id": "188"
+    },
+    {
+      "level": "error",
+      "message": "Error while processing server components",
+      "timestamp": "2015-07-20 22:31:45 -0500",
+      "execution_id": "72"
+    }
+  ],
+  "templateValid": true,
+  "migration": "true"
+}

@@ -1,0 +1,5 @@
+esxcli --server 172.28.10.72 --username root --password xxxx system version get
+   Product: VMware ESXi
+   Version: 5.1.0
+   Build: Releasebuild-2323236
+   Update: 3

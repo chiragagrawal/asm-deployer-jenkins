@@ -1,0 +1,147 @@
+{
+    "id": "05B794EC-75DA-477E-815B-37340D13CD88", 
+    "interfaces": [
+        {
+            "card_index": 0, 
+            "enabled": true, 
+            "fabrictype": "ethernet", 
+            "id": "0983C47E-68B4-4B76-BEE6-1E3AB206F96D", 
+            "interfaces": [
+                {
+                    "enabled": false, 
+                    "fqdd": "NIC.Integrated.1-1-1", 
+                    "id": "8AAC214D-0168-4D62-8D30-7975A6F8CB8F", 
+                    "name": "Port 1", 
+                    "nictype": "2x10Gb", 
+                    "partitioned": false, 
+                    "partitions": [
+                        {
+                            "fqdd": "NIC.Integrated.1-1-1", 
+                            "id": "4B1DEC71-710A-4569-843A-8B41445F46A8", 
+                            "iscsiIQN": null, 
+                            "iscsiMacAddress": null, 
+                            "lanMacAddress": "00:0E:AA:D1:00:01", 
+                            "maximum": 100, 
+                            "minimum": 0, 
+                            "name": "1", 
+                            "networkObjects": [
+                                {
+                                    "description": "Static OS Install", 
+                                    "id": "ff808081550dd13a0155113d8a220577", 
+                                    "name": "PXE Static", 
+                                    "static": true, 
+                                    "staticNetworkConfiguration": {
+                                        "dnsSuffix": "asmdev.local", 
+                                        "gateway": "172.25.0.1", 
+                                        "ipAddress": "172.25.3.151", 
+                                        "primaryDns": "172.20.0.8", 
+                                        "secondaryDns": null, 
+                                        "subnet": "255.255.0.0"
+                                    }, 
+                                    "type": "PXE", 
+                                    "vlanId": 25
+                                }, 
+                                {
+                                    "description": "", 
+                                    "id": "ff808081550dd13a015526dbdc600c12", 
+                                    "name": "Workload Static", 
+                                    "static": true, 
+                                    "staticNetworkConfiguration": {
+                                        "dnsSuffix": "asmdev.local", 
+                                        "gateway": "172.20.0.1", 
+                                        "ipAddress": "172.20.3.151", 
+                                        "primaryDns": "172.20.0.8", 
+                                        "secondaryDns": null, 
+                                        "subnet": "255.255.0.0"
+                                    }, 
+                                    "type": "PUBLIC_LAN", 
+                                    "vlanId": 20
+                                }
+                            ], 
+                            "networks": [
+                                "ff808081550dd13a0155113d8a220577", 
+                                "ff808081550dd13a015526dbdc600c12"
+                            ], 
+                            "partition_index": 0, 
+                            "partition_no": 1, 
+                            "port_no": 1, 
+                            "wwnn": null, 
+                            "wwpn": null
+                        }
+                    ], 
+                    "redundancy": false
+                }, 
+                {
+                    "enabled": false, 
+                    "fqdd": "NIC.Integrated.1-2-1", 
+                    "id": "6EBB7DD9-7807-4EAF-AC7D-471AF422926D", 
+                    "name": "Port 2", 
+                    "nictype": null, 
+                    "partitioned": false, 
+                    "partitions": [
+                        {
+                            "fqdd": "NIC.Integrated.1-2-1", 
+                            "id": "4B1DEC71-710A-4569-843A-8B41445F46A8", 
+                            "iscsiIQN": null, 
+                            "iscsiMacAddress": null, 
+                            "lanMacAddress": "00:0E:AA:D1:00:02", 
+                            "mac_address": "EC:F4:BB:BF:29:7E", 
+                            "maximum": 100, 
+                            "minimum": 0, 
+                            "name": "1", 
+                            "networkObjects": [
+                                {
+                                    "description": "Static OS Install", 
+                                    "id": "ff808081550dd13a0155113d8a220577", 
+                                    "name": "PXE Static", 
+                                    "static": true, 
+                                    "staticNetworkConfiguration": {
+                                        "dnsSuffix": "asmdev.local", 
+                                        "gateway": "172.25.0.1", 
+                                        "ipAddress": "172.25.3.151", 
+                                        "primaryDns": "172.20.0.8", 
+                                        "secondaryDns": null, 
+                                        "subnet": "255.255.0.0"
+                                    }, 
+                                    "type": "PXE", 
+                                    "vlanId": 25
+                                }, 
+                                {
+                                    "description": "", 
+                                    "id": "ff808081550dd13a015526dbdc600c12", 
+                                    "name": "Workload Static", 
+                                    "static": true, 
+                                    "staticNetworkConfiguration": {
+                                        "dnsSuffix": "asmdev.local", 
+                                        "gateway": "172.20.0.1", 
+                                        "ipAddress": "172.20.3.151", 
+                                        "primaryDns": "172.20.0.8", 
+                                        "secondaryDns": null, 
+                                        "subnet": "255.255.0.0"
+                                    }, 
+                                    "type": "PUBLIC_LAN", 
+                                    "vlanId": 20
+                                }
+                            ], 
+                            "networks": [
+                                "ff808081550dd13a0155113d8a220577", 
+                                "ff808081550dd13a015526dbdc600c12"
+                            ], 
+                            "partition_index": 1, 
+                            "partition_no": 1, 
+                            "port_no": 2, 
+                            "wwnn": null, 
+                            "wwpn": null
+                        }
+                    ], 
+                    "redundancy": false
+                }
+            ], 
+            "name": "Interface 1", 
+            "nictype": "2x10Gb", 
+            "partitioned": false, 
+            "redundancy": true, 
+            "usedforfc": false
+        }
+    ]
+}

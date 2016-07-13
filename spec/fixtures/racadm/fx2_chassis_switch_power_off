@@ -1,0 +1,21 @@
+Chassis         Present         ON              OK              STOMP01         N/A             
+Main-Board      Present         ON              OK              N/A             N/A             
+Fan-1           Present         ON              OK              N/A             N/A             
+Fan-2           Present         ON              OK              N/A             N/A             
+Fan-3           Present         ON              OK              N/A             N/A             
+Fan-4           Present         ON              OK              N/A             N/A             
+Fan-5           Present         ON              OK              N/A             N/A             
+Fan-6           Present         ON              OK              N/A             N/A             
+Fan-7           Present         ON              OK              N/A             N/A             
+Fan-8           Present         ON              OK              N/A             N/A             
+PS-1            Present         Online          OK              N/A             N/A             
+PS-2            Present         Online          OK              N/A             N/A             
+CMC             Present         Primary         OK              N/A             N/A             
+Switch-1        Present         On              OK              H4YRTS5         N/A             
+Switch-2        Present         OFF             OK              0000000         N/A             
+Server-1        Present         ON              OK              N/A             N/A             
+Server-2        Present         ON              OK              ASMFC02         ASMFC02         
+Server-3        Not Present     N/A             N/A             N/A             N/A             
+Server-4        Not Present     N/A             N/A             N/A             N/A             
+Cable-IO        Present         ON              OK              STOMP01         N/A             
+Cable-CP        Present         ON              OK              STOMP01         N/A             

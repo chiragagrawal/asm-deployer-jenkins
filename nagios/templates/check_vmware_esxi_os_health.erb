@@ -1,0 +1,17 @@
+define service {
+  host_name             <%= server[:ref_id] %>
+  service_description   OS Health
+  check_command         check_esxi_hardware!<%= server[:os_ip_address] %>!root!<%= server[:os_admin_password] %>
+  max_check_attempts    1
+  check_interval        5
+  retry_interval        5
+  notification_interval 0
+}
+
+define servicedependency {
+  dependent_host_name                       <%= server[:ref_id] %>
+  dependent_service_description             OS Health
+  host_name                                 dell-asm
+  service_description                       load-short-circuit
+  execution_failure_criteria                w,u,c,p
+}

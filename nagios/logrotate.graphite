@@ -1,0 +1,10 @@
+/var/log/carbon/*.log {
+        create 0644 carbon carbon
+        daily
+        rotate 7
+        missingok
+        sharedscripts
+        postrotate
+          /sbin/service carbon-cache restart > /dev/null 2>/dev/null || true
+        endscript
+}

@@ -1,0 +1,43 @@
+Chassis         Present         ON              OK              ENV02AB         
+Fan-1           Present         ON              OK                              
+Fan-2           Present         ON              OK                              
+Fan-3           Present         ON              OK                              
+Fan-4           Present         ON              OK                              
+Fan-5           Present         ON              OK                              
+Fan-6           Present         ON              OK                              
+Fan-7           Present         ON              OK                              
+Fan-8           Present         ON              OK                              
+Fan-9           Present         ON              OK                              
+PS-1            Not Present     N/A             N/A             N/A             
+PS-2            Not Present     N/A             N/A             N/A             
+PS-3            Present         Online          OK                              
+PS-4            Present         Online          OK                              
+PS-5            Present         Online          OK                              
+PS-6            Not Present     N/A             N/A             N/A             
+CMC-1           Present         Primary         OK              N/A             
+CMC-2           Not Present     N/A             N/A             N/A             
+Switch-1        Present         ON              OK              NAVA100         
+Switch-2        Present         ON              OK              STHelp7         
+Switch-3        Present         ON              OK              CFG00A2         
+Switch-4        Present         ON              OK              BDQPTS1         
+Switch-5        Not Present     N/A             N/A             N/A             
+Switch-6        Not Present     N/A             N/A             N/A             
+Server-1        Present         OFF             OK              36QN3V1         
+Server-2        Not Present     N/A             N/A             N/A             
+Server-3        Present         OFF             OK              7DQSGT1         
+Server-4        Present         OFF             OK              JGD5HW1         
+Server-5        Present         ON              OK              GDQSGT1         
+Server-6        Present         ON              OK              2GQSGT1         
+Server-7        Not Present     N/A             N/A             N/A             
+Server-8        Present         OFF             OK              6GZFCT1         
+Server-9        Present         OFF             OK              2DRBQV1         
+Server-10       Present         OFF             OK              15PMGS1         
+Server-11       Present         OFF             OK              GF2QDV1         
+Server-12       Present         OFF             OK              712QQV1         
+Server-13       Present         OFF             OK              5DRBQV1         
+Server-14       Present         OFF             OK              FCRBQV1         
+Server-15       Not Present     N/A             N/A             N/A             
+Server-16       Not Present     N/A             N/A             N/A             
+KVM             Present         ON              OK                              
+IO-Cable        Present         ON              OK              ENV02AB         
+FPC-Cable       Present         ON              OK              ENV02AB         

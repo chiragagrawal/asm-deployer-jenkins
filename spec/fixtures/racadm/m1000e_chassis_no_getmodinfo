@@ -1,0 +1,5 @@
+cmdstat
+	status       : 2
+	status_tag   : COMMAND PROCESSING FAILED
+	error        : 253
+	error_tag    : COMMAND NOT RECOGNIZED

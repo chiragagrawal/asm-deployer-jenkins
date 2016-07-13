@@ -1,0 +1,5 @@
+lib/**/*.rb
+nagios/check_snmp.rb
+-
+notes/RULE_ENGINE_NOTES.md
+notes/TYPES_AND_PROVIDERS.md

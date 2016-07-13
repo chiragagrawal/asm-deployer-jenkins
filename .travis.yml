@@ -1,0 +1,7 @@
+language: ruby
+sudo: false
+env:
+  - JRUBY_OPTS="-J-Xmx4096m"
+rvm:
+  - 1.9.3
+  - jruby-19mode

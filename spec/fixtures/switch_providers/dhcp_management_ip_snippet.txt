@@ -1,0 +1,6 @@
+!
+interface ManagementEthernet 0/0
+ ip address dhcp
+ no shutdown
+!
+end

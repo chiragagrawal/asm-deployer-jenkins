@@ -1,0 +1,29 @@
+esxcli --server 172.28.10.97 --username root --password P@ssw0rd network vswitch dvs vmware  list --vds-name vdsmanagement-vds
+vdsmanagement-vds
+   Name: vdsmanagement-vds
+   VDS ID: fe a3 16 50 ec 9b 4e 3b-53 29 49 23 8e c6 8d 3e
+   Class: etherswitch
+   Num Ports: 5632
+   Used Ports: 6
+   Configured Ports: 128
+   MTU: 1500
+   CDP Status: listen
+   Beacon Timeout: -1
+   Uplinks: vmnic1, vmnic0
+   VMware Branded: true
+   DVPort:
+         Client: vmnic0
+         DVPortgroup ID: dvportgroup-477
+         In Use: true
+         Port ID: 88
+
+         Client: vmnic1
+         DVPortgroup ID: dvportgroup-477
+         In Use: true
+         Port ID: 89
+
+         Client: vmk0
+         DVPortgroup ID: dvportgroup-478
+         In Use: true
+         Port ID: 46
+

@@ -1,0 +1,43 @@
+---
+agent-win29vm1:
+  classes:
+    windows_postinstall::nic::adapter_nic_ip_settings:
+      ipaddress_info:
+        NICIPInfo:
+        - adapter_name: Workload
+          ip_address: 172.31.33.133
+          subnet: 255.255.255.0
+          primaryDns: 172.31.62.1
+          mac_address: 00-50-56-8a-4b-82
+          gateway: 172.31.33.254
+          adapter_type: vm_network
+    windows_postinstall:
+      upload_file: moktest.ps1
+      upload_recurse: false
+      execute_file_command: powershell -executionpolicy bypass -file moktest.ps1
+    mssql2012:
+      media: \\172.31.54.209\razor\SQLServer2012
+      instancename: MSSQLSERVER
+      features: SQLENGINE,CONN,SSMS,ADV_SSMS
+      sapwd: Dell1234
+      agtsvcaccount: SQLAGTSVC
+      agtsvcpassword: Dell1234
+      assvcaccount: SQLASSVC
+      assvcpassword: Dell1234
+      rssvcaccount: SQLRSSVC
+      rssvcpassword: Dell1234
+      sqlsvcaccount: SQLSVC
+      sqlsvcpassword: Dell1234
+      instancedir: C:\Program Files\Microsoft SQL Server
+      ascollation: Latin1_General_CI_AS
+      sqlcollation: SQL_Latin1_General_CP1_CI_AS
+      admin: Administrator
+      netfxsource: \\172.31.54.209\razor\win2012R2\resources\sxs
+  resources:
+    file:
+      logans_file:
+        ensure: present
+        require: Class['windows_postinstall']
+      second_file:
+        ensure: present
+        require: File['logans_file']

@@ -1,0 +1,1031 @@
+{
+  "id": "ff80808151352a77015135fac1fb02b2",
+  "deploymentName": "dkim-vm-08",
+  "deploymentDescription": "",
+  "retry": false,
+  "teardown": false,
+  "createdDate": null,
+  "createdBy": null,
+  "updatedDate": null,
+  "updatedBy": null,
+  "serviceTemplate": {
+    "id": "ff80808151173ecd0151178e401101f1",
+    "templateName": "[ASM-3012] Deploy VM with Static NIC",
+    "templateDescription": "",
+    "templateVersion": null,
+    "templateValid": {
+      "valid": true,
+      "messages": [
+
+      ]
+    },
+    "templateLocked": false,
+    "draft": false,
+    "wizardPageNumber": null,
+    "createdDate": 1447799177233,
+    "createdBy": "admin",
+    "updatedDate": null,
+    "lastDeployedDate": null,
+    "updatedBy": null,
+    "components": [
+      {
+        "id": "26BD8BB1-176A-46FC-AD1F-EC2555985B8D",
+        "componentID": "component-virtualmachine-vcenter-1",
+        "componentValid": {
+          "valid": true,
+          "messages": [
+
+          ]
+        },
+        "puppetCertName": "26BD8BB1-176A-46FC-AD1F-EC2555985B8D",
+        "name": "vCenter Virtual Machine",
+        "type": "VIRTUALMACHINE",
+        "teardown": false,
+        "helpText": null,
+        "configFile": null,
+        "serialNumber": null,
+        "asmGUID": null,
+        "relatedComponents": {
+          "22A7F776-1991-412E-9E1B-89EF3DB58D54": "VMWare Cluster"
+        },
+        "resources": [
+          {
+            "id": "asm::server",
+            "displayName": "Virtual Machine OS Settings",
+            "parameters": [
+              {
+                "id": "os_host_name",
+                "value": "vm1",
+                "type": "STRING",
+                "displayName": "Host Name",
+                "required": true,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": "false",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "razor_image",
+                "value": "CentOS-6.5_x86_64",
+                "type": "ENUMERATED",
+                "displayName": "OS Image",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "",
+                    "name": "Select...",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "RHEL-6.6_x86_64",
+                    "name": "RHEL-6.6_x86_64",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "RHEL-7.1_x86_64",
+                    "name": "RHEL-7.1_x86_64",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "CentOS-6.4_x86_64",
+                    "name": "CentOS-6.4_x86_64",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "CentOS-6.5_x86_64",
+                    "name": "CentOS-6.5_x86_64",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "RHEL6.4_x86_64",
+                    "name": "RHEL6.4_x86_64",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Windows2012-R2",
+                    "name": "Windows2012-R2",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "CentOS-7-x86_64",
+                    "name": "CentOS-7-x86_64",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": "Location of OS image installation files",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "os_image_type",
+                "value": "redhat",
+                "type": "ENUMERATED",
+                "displayName": "OS Image Type",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "admin_password",
+                "value": "ff80808151352a77015135fac0f302b0",
+                "type": "PASSWORD",
+                "displayName": "Administrator password",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": "OS administrator password set on the installed OS",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ntp_server",
+                "value": null,
+                "type": "STRING",
+                "displayName": "NTP Server",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": "razor_image",
+                "dependencyValue": "RHEL-6.6_x86_64,CentOS-6.4_x86_64,CentOS-6.5_x86_64,RHEL6.4_x86_64,RHEL-7.1_x86_64,CentOS-7-x86_64,Windows2012-R2,esxi-5.1,esxi-5.5,esxi-6.0",
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "26BD8BB1-176A-46FC-AD1F-EC2555985B8D",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          },
+          {
+            "id": "asm::vm::vcenter",
+            "displayName": "Virtual Machine Settings",
+            "parameters": [
+              {
+                "id": "cpu_count",
+                "value": "1",
+                "type": "INTEGER",
+                "displayName": "Number of CPUs",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 1,
+                "max": 8,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "disksize_in_gb",
+                "value": "32",
+                "type": "INTEGER",
+                "displayName": "Virtual Disk Size (GB)",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 1,
+                "max": 2048,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "memory_in_mb",
+                "value": "8192",
+                "type": "INTEGER",
+                "displayName": "Memory in MB",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 1024,
+                "max": 262144,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": "Memory size should be in multiples of 4",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 4
+              },
+              {
+                "id": "network_interfaces",
+                "value": "ff80808150b4e04d0150b4f1394800a4",
+                "type": "LIST",
+                "displayName": "Networks",
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks":  [
+                  {
+                    "id": "ff80808150b4e04d0150b4f1394800a4",
+                    "name": "Work Static",
+                    "description": "",
+                    "type": "PRIVATE_LAN",
+                    "vlanId": 20,
+                    "static": true,
+                    "staticNetworkConfiguration": {
+                      "gateway": "172.20.0.1",
+                      "subnet": "255.255.0.0",
+                      "primaryDns": "172.20.0.8",
+                      "secondaryDns": null,
+                      "dnsSuffix": "aidev.com",
+                      "ipRange": [
+                        {
+                          "Id": "ff80808150b4e04d0150b4f1394800a5",
+                          "StartingIp": "172.20.11.100",
+                          "EndingIp": "172.20.11.110"
+                        }
+                      ],
+                      "ipAddress": "172.20.11.110"
+                    }
+                  },
+                  {
+                    "id": "ff80808150b4e04d0150b4ef67800089",
+                    "name": "Public Static",
+                    "description": "",
+                    "type": "PUBLIC_LAN",
+                    "vlanId": 22,
+                    "static": true,
+                    "staticNetworkConfiguration": {
+                      "gateway": "172.22.0.1",
+                      "subnet": "255.255.0.0",
+                      "primaryDns": "172.20.0.8",
+                      "secondaryDns": null,
+                      "dnsSuffix": "aidev.com",
+                      "ipRange": [
+                        {
+                          "Id": "ff80808150b4e04d0150b4ef6781008a",
+                          "StartingIp": "172.22.11.100",
+                          "EndingIp": "172.22.11.110"
+                        }
+                      ],
+                      "ipAddress": "172.22.11.110"
+                    }
+                  }
+                ],
+
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "ff80808150b4e04d0150b4ef67800089",
+                    "name": "Public Static",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808150b4e04d0150b4f1394800a4",
+                    "name": "Work Static",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808151173ecd015117a893d60249",
+                    "name": "Work DHCP",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808151173ecd015117a8d64f024a",
+                    "name": "Public DHCP",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808151215fd0015126acd69d01d1",
+                    "name": "Private Static 22",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808151215fd0015126cb135701f6",
+                    "name": "Public Static 20 - temp",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": "Networks associated with the VM",
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "default_gateway",
+                "value": "ff80808150b4e04d0150b4f1394800a4",
+                "type": "STRING",
+                "displayName": "Static Network Default Gateway",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "",
+                    "name": "Select...",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808150b4e04d0150b4ef67800089",
+                    "name": "Public Static",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808150b4e04d0150b4f1394800a4",
+                    "name": "Work Static",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808151215fd0015126acd69d01d1",
+                    "name": "Private Static 22",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "ff80808151215fd0015126cb135701f6",
+                    "name": "Public Static 20 - temp",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "26BD8BB1-176A-46FC-AD1F-EC2555985B8D",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "refId": null,
+        "cloned": null,
+        "clonedFromId": null,
+        "manageFirmware": false,
+        "ip": null
+      },
+      {
+        "id": "22A7F776-1991-412E-9E1B-89EF3DB58D54",
+        "componentID": "component-cluster-vcenter-1",
+        "componentValid": {
+          "valid": true,
+          "messages": [
+
+          ]
+        },
+        "puppetCertName": "vcenter-env11-vcenter6.aidev.com",
+        "name": "VMWare Cluster",
+        "type": "CLUSTER",
+        "teardown": false,
+        "helpText": null,
+        "configFile": null,
+        "serialNumber": null,
+        "asmGUID": "vcenter-172.28.11.7",
+        "relatedComponents": {
+          "26BD8BB1-176A-46FC-AD1F-EC2555985B8D": "vCenter Virtual Machine"
+        },
+        "resources": [
+          {
+            "id": "asm::cluster",
+            "displayName": "Cluster Settings",
+            "parameters": [
+              {
+                "id": "datacenter",
+                "value": "dkim-datacenter-R730",
+                "type": "ENUMERATED",
+                "displayName": "Data Center Name",
+                "required": true,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "",
+                    "name": "Select...",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Env11",
+                    "name": "Env11",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vcenter-172.28.11.6"
+                  },
+                  {
+                    "value": "dkim-datacenter-R630",
+                    "name": "dkim-datacenter-R630",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vcenter-172.28.11.7"
+                  },
+                  {
+                    "value": "dkim-datacenter-R730",
+                    "name": "dkim-datacenter-R730",
+                    "dependencyTarget": "asm_guid",
+                    "dependencyValue": "vcenter-172.28.11.7"
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "cluster",
+                "value": "dkim-cluster-R730",
+                "type": "ENUMERATED",
+                "displayName": "Cluster Name",
+                "required": true,
+                "requiredAtDeployment": true,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+                  {
+                    "value": "",
+                    "name": "Select...",
+                    "dependencyTarget": null,
+                    "dependencyValue": null
+                  },
+                  {
+                    "value": "Management",
+                    "name": "Management",
+                    "dependencyTarget": "datacenter",
+                    "dependencyValue": "Env11"
+                  },
+                  {
+                    "value": "dkim-cluster-R630",
+                    "name": "dkim-cluster-R630",
+                    "dependencyTarget": "datacenter",
+                    "dependencyValue": "dkim-datacenter-R630"
+                  },
+                  {
+                    "value": "dkim-cluster-R730",
+                    "name": "dkim-cluster-R730",
+                    "dependencyTarget": "datacenter",
+                    "dependencyValue": "dkim-datacenter-R730"
+                  }
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "vds_enabled",
+                "value": "false",
+                "type": "BOOLEAN",
+                "displayName": "Enable Virtual Distributed Switches For Host Networks",
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": false,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "vcenter-env11-vcenter6.aidev.com",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          },
+          {
+            "id": "asm::cluster::vds",
+            "displayName": "vSphere VDS Settings",
+            "parameters": [
+              {
+                "id": "ensure",
+                "value": "present",
+                "type": "STRING",
+                "displayName": null,
+                "required": true,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": 0,
+                "max": 0,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": "none",
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              },
+              {
+                "id": "title",
+                "value": "vcenter-env11-vcenter6.aidev.com",
+                "type": "STRING",
+                "displayName": null,
+                "required": false,
+                "requiredAtDeployment": false,
+                "hideFromTemplate": true,
+                "min": null,
+                "max": null,
+                "possibleValues": [
+
+                ],
+                "possibleValuesDisplayName": [
+
+                ],
+                "dependencyTarget": null,
+                "dependencyValue": null,
+                "networks": null,
+                "networkConfiguration": null,
+                "raidConfiguration": null,
+                "options": [
+
+                ],
+                "toolTip": null,
+                "readOnly": false,
+                "generated": false,
+                "group": null,
+                "infoIcon": false,
+                "maxLength": 256,
+                "step": 1
+              }
+            ]
+          }
+        ],
+        "refId": null,
+        "cloned": null,
+        "clonedFromId": null,
+        "manageFirmware": false,
+        "ip": null
+      }
+    ],
+    "category": "Testers",
+    "enableApps": false,
+    "enableCluster": false,
+    "enableServer": false,
+    "enableStorage": false,
+    "enableVMs": false,
+    "allUsersAllowed": false,
+    "assignedUsers": null,
+    "manageFirmware": false,
+    "firmwareRepository": null,
+    "attachments": null
+  },
+  "scheduleDate": null,
+  "status": "pending",
+  "compliant": true,
+  "deploymentDevice": [
+
+  ],
+  "vms": null,
+  "updateServerFirmware": false,
+  "firmwareRepository": null,
+  "firmwareRepositoryId": null,
+  "individualTeardown": false,
+  "deploymentHealthStatusType": null,
+  "numberOfDeployments": 1,
+  "assignedUsers": null,
+  "allUsersAllowed": false,
+  "canMigrate": false,
+  "canScaleupStorage": false,
+  "canScaleupServer": false,
+  "canScaleupVM": false,
+  "canScaleupCluster": false,
+  "canScaleupNetwork": false,
+  "owner": null,
+  "canEdit": false,
+  "canDelete": false,
+  "canCancel": false,
+  "canDeleteResources": false,
+  "canRetry": false,
+  "canScaleupApplication": false,
+  "jobDetails": null,
+  "templateValid": true
+}

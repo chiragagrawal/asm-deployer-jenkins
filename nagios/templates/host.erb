@@ -1,0 +1,15 @@
+define host {
+  host_name           <%= server[:ref_id] %>
+  alias               <%= server[:model] %> @ <%= server[:ip_address] %>
+  address             <%= server[:ip_address] %>
+  check_command       check-host-alive
+  max_check_attempts  1
+  parents             dell-asm
+}
+
+define hostdependency{
+  dependent_host_name         <%= server[:ref_id] %>
+  host_name                   dell-asm
+  execution_failure_criteria  d,u,p
+}
+

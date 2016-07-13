@@ -1,0 +1,131 @@
+{
+    "id": 8181,
+    "deploymentName": "Server bare metal test",
+    "serviceTemplate": {
+        "components": [
+            {
+                "id": "bd36856d-ce88-4538-acdd-131e9f00c874",
+                "name": "Server",
+                "relatedComponents": {
+                    "c9ac7879-9752-40f9-b2a0-b9107a708a82": "Storage"
+                },
+                "resources": [
+                    {
+                        "id": "ASM::Server",
+                        "displayName": "OS Settings",
+                        "parameters": [
+                            {
+                                "id": "title",
+                                "displayName": "Serial Number",
+                                "value": "JH870W1"
+                            },
+                            {
+                                "id": "identity_pool",
+                                "displayName": "Identity Pool",
+                                "possibleValues": -1,
+                                "possibleValuesDisplayName": "Global",
+                                "required": true,
+                                "type": "ENUMERATED",
+                                "value": -1
+                            },
+                            {
+                                "id": "os_host_name",
+                                "displayName": "Host Name",
+                                "required": true,
+                                "type": "STRING",
+                                "value": "host1"
+                            },
+                            {
+                                "id": "hypervisor_network",
+                                "displayName": "Hypervisor Management Network",
+                                "possibleValues": -1,
+                                "possibleValuesDisplayName": "Select...",
+                                "required": true,
+                                "type": "ENUMERATED",
+                                "value": -1
+                            },
+                            {
+                                "id": "vmotion_network",
+                                "displayName": "Hypervisor vMotion Network",
+                                "possibleValues": -1,
+                                "possibleValuesDisplayName": "Select...",
+                                "required": true,
+                                "type": "ENUMERATED",
+                                "value": -1
+                            },
+                            {
+                                "id": "storage_network",
+                                "displayName": "Storage Network",
+                                "possibleValues": -1,
+                                "possibleValuesDisplayName": "Select...",
+                                "required": true,
+                                "type": "ENUMERATED",
+                                "value": -1
+                            },
+                            {
+                                "id": "WorkloadNetwork",
+                                "displayName": "Workload Networks",
+                                "required": true,
+                                "type": "LIST"
+                            },
+                            {
+                                "id": "admin_password",
+                                "displayName": "Administrator password",
+                                "required": true,
+                                "type": "PASSWORD",
+                                "value": "foo"
+                            },
+                            {
+                                "id": "razor_image",
+                                "displayName": "OS Image",
+                                "possibleValues": [
+                                    -1,
+                                    "esxi-5.1"
+                                ],
+                                "possibleValuesDisplayName": [
+                                    "Select...",
+                                    "esxi-5.1"
+                                ],
+                                "required": true,
+                                "type": "ENUMERATED",
+                                "value": "esxi-5.1"
+                            },
+                            {
+                                "id": "os_image_type",
+                                "displayName": "OS Image Type",
+                                "possibleValues": [
+                                    -1,
+                                    "Linux",
+                                    "Windows",
+                                    "ESXi"
+                                ],
+                                "possibleValuesDisplayName": [
+                                    "Select...",
+                                    "Linux",
+                                    "Windows",
+                                    "ESXi"
+                                ],
+                                "required": true,
+                                "type": "ENUMERATED",
+                                "value": "vmware_esxi"
+                            },
+                            {
+                                "id": "CustomScript",
+                                "displayName": "Custom OS Installation script",
+                                "required": true,
+                                "type": "TEXT"
+                            }
+                        ]
+                    }
+                ],
+                "type": "SERVER"
+            }
+        ],
+        "createdBy": "Administrator",
+        "draft": false,
+        "id": 1000,
+        "templateDescription": "Default Template Description",
+        "templateName": "Default Template Name",
+        "updatedBy": "Administrator"
+    }
+}

@@ -1,0 +1,38 @@
+#!ipxe
+
+:nic0
+
+echo Configuring NIC.Embedded.2-1-1 (00:8c:fa:f0:6b:c6) ...
+
+# Set nic0 to the device (net0, etc) with mac address 00:8c:fa:f0:6b:c6
+iseq ${net0/mac} 00:8c:fa:f0:6b:c6 && set nic0 net0 ||
+iseq ${net1/mac} 00:8c:fa:f0:6b:c6 && set nic0 net1 ||
+iseq ${net2/mac} 00:8c:fa:f0:6b:c6 && set nic0 net2 ||
+iseq ${net3/mac} 00:8c:fa:f0:6b:c6 && set nic0 net3 ||
+
+# Skip this partition if we did not find a device with matching mac address
+isset nic0 || goto nic0_missing
+goto nic0_configure
+
+:nic0_missing
+echo NIC.Embedded.2-1-1 (00:8c:fa:f0:6b:c6) not found, skipping
+goto nic0_end
+
+:nic0_configure
+
+echo Configuring DHCP on ${nic0}
+ifconf -c dhcp ${nic0} || goto nic0_err
+
+chain http://${next-server}:8080/svc/boot?${nic0}=${${nic0}/mac:hexhyp}&dhcp_mac=${${nic0}/mac:hexhyp}&serial=${serial}&asset=${asset}&uuid=${uuid} && echo successfully completed the chain-loaded script; booting locally with 'exit' && exit || goto nic0_err
+
+:nic0_err
+
+echo Failed to boot from NIC.Embedded.2-1-1, continuing..."
+ifclose ${nic0}
+
+:nic0_end
+
+:failed
+echo Failed to boot
+sleep 60
+reboot

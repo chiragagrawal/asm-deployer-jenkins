@@ -1,0 +1,5 @@
+{
+  "chStackUnitStatus": "SNMPv2-SMI::enterprises.6027.3.10.1.2.2.1.8.1 = INTEGER: 1\n",
+  "chSysFanTrayOperStatus": "SNMPv2-SMI::enterprises.6027.3.10.1.2.4.1.2.1.1 = INTEGER: 1\nSNMPv2-SMI::enterprises.6027.3.10.1.2.4.1.2.1.2 = INTEGER: 1\n",
+  "chSysPowerSupplyOperStatus": "SNMPv2-SMI::enterprises.6027.3.10.1.2.3.1.2.1.1 = INTEGER: 1\nSNMPv2-SMI::enterprises.6027.3.10.1.2.3.1.2.1.2 = INTEGER: 1\n"
+}

@@ -1,0 +1,51 @@
+{
+    "deploymentName": "deployed_server",
+    "serviceTemplate": {
+      "id": "deployed_server",
+      "createdDate": "2014-03-24T15:54:50.084Z",
+      "components": [
+        {
+          "id": "ID1",
+          "componentID": "COMPID1",
+          "type": "SERVER",
+          "relatedComponents": {
+              "ID1": "STORAGE1"
+          },
+          "resources": {
+            "id": "asm::server",
+            "parameters": [
+              {
+                "id": "title",
+                "value": "server1"
+              },
+              {
+                "id": "puppetcertname",
+                "value": "server1"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ID2",
+          "componentID": "COMPID2",
+          "type": "SERVER",
+          "relatedComponents": {
+            "ID1": "STORAGE1"
+          },
+          "resources": {
+            "id": "asm::server",
+            "parameters": [
+              {
+                "id": "title",
+                "value": "server2"
+              },
+              {
+                "id": "puppetcertname",
+                "value": "server2"
+              }
+            ]
+          }
+        }
+      ]
+    }
+}

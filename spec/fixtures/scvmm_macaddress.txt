@@ -1,0 +1,219 @@
+
+
+Name                                   : localhost
+Port                                   : 8100
+IsConnected                            : True
+ServerInterfaceVersion                 : 2.1.0
+Profile                                : Administrator
+UserRole                               : Administrator
+UserRoleId                             : 75700cd5-893e-4f68-ada7-50ef4668acc6
+FullyQualifiedDomainName               : SCVMMR2.aidev.com
+FQDN                                   : SCVMMR2.aidev.com
+Channel                                : Microsoft.VirtualManager.Remoting.IVirtualManagerService
+ObjectCache                            : Microsoft.SystemCenter.VirtualMachineManager.ClientCache
+OpsMgrServer                           : 
+CEIPOptIn                              : False
+VMRCAccessAccount                      : 
+VMRCDefaultPort                        : 5900
+VMConnectDefaultPort                   : 2179
+MinimumSupportedAgentVersion           : 2.0.4271.0
+MinimumSupportedGuestAgentVersion      : 3.0.1469.0
+LibraryRefresherEnabled                : True
+LibraryRefresherFrequency              : 1
+DatabaseServerName                     : VDI-SQL
+DatabaseInstanceName                   : VDI-SQL.aidev.com\SCVMMR2ENV4,1433
+DatabaseName                           : VirtualManagerDBR2
+ConnectedUserName                      : AIDEV\administrator
+ConnectedUserGroups                    : Microsoft.VirtualManager.Remoting.AccountCollection
+UserName                               : Windows User
+CompanyName                            : Dell
+ProductVersion                         : 3.2.7510.0
+ProductID                              : 03535-092-6002024-02907
+LicenseType                            : Volume
+EvaluationDaysLeft                     : 0
+ManagedComputer                        : {SCVMMR2.aidev.com}
+VMMServiceAccount                      : AIDEV\administrator
+IsHighlyAvailable                      : False
+FailoverVMMNodes                       : 
+ActiveVMMNode                          : 
+AutomaticLogicalNetworkCreationEnabled : True
+AutomaticVirtualNetworkCreationEnabled : False
+LogicalNetworkMatchOption              : FirstDNSSuffixLabel
+BackupLogicalNetworkMatchOption        : VirtualNetworkSwitchName
+ForOnBehalfOf                          : False
+IsEvaluationVersion                    : 
+
+VMCPath                             : C:\ClusterStorage\Volume1\arriVMTest\Virtual Machines\0AD98039-D7F6-48EA-A768-E11D405BE585.xml
+MarkedAsTemplate                    : False
+OwnerIdentifier                     : S-1-5-21-1141861283-2809408965-1315881626-500
+VMId                                : 0AD98039-D7F6-48EA-A768-E11D405BE585
+VMResourceGroup                     : SCVMM arriVMTest Resources
+VMConfigResource                    : SCVMM arriVMTest Configuration
+VMConfigResourceStatus              : ClusterResourceOnline
+VMResource                          : SCVMM arriVMTest
+VMResourceStatus                    : ClusterResourceOnline
+DiskResources                       : {Cluster Disk 1,2}
+UnsupportedReason                   : Success (0)
+RefresherErrors                     : {}
+VirtualMachineState                 : Running
+HostGroupPath                       : All Hosts\a5038dcnew\arriVMTest
+TotalSize                           : 8730443776
+MemoryAssignedMB                    : 8192
+MemoryAvailablePercentage           : 0
+DynamicMemoryDemandMB               : 8192
+DynamicMemoryStatus                 : 
+AllocatedGPU                        : 
+HasPassthroughDisk                  : False
+HasSharedStorage                    : False
+Status                              : Running
+IsOrphaned                          : False
+HasSavedState                       : False
+StatusString                        : Running
+StartAction                         : NeverAutoTurnOnVM
+StopAction                          : TurnOffVM
+RunGuestAccount                     : 
+DelayStart                          : 0
+BiosGuid                            : d2858434-8075-40b2-92ab-67042631f493
+CPUUtilization                      : 0
+PerfCPUUtilization                  : 0
+PerfMemory                          : 8192
+PerfDiskBytesRead                   : 0
+PerfDiskBytesWrite                  : 2457
+PerfNetworkBytesRead                : 550
+PerfNetworkBytesWrite               : 0
+VirtualizationPlatform              : HyperV
+ComputerNameString                  : WIN-K4UQJQRI9UC
+CreationSource                      : env15win827
+IsUndergoingLiveMigration           : False
+SourceObjectType                    : VM Template
+OperatingSystemShutdownEnabled      : True
+TimeSynchronizationEnabled          : True
+DataExchangeEnabled                 : True
+HeartbeatEnabled                    : True
+BackupEnabled                       : True
+ExcludeFromPRO                      : False
+FailedJobID                         : 
+CheckpointLocation                  : C:\ClusterStorage\Volume1\arriVMTest
+SelfServiceUserRole                 : 
+PassThroughDisks                    : {}
+ComputerTier                        : 
+ConnectToAddresses                  : {}
+CloudVmRoleId                       : 
+CloudVmRoleName                     : 
+UpgradeDomain                       : 
+SCApplications                      : {}
+LastRestoredCheckpointID            : 0AD98039-D7F6-48EA-A768-E11D405BE585
+LastRestoredVMCheckpoint            : 
+ComplianceStatus                    : 
+IsFaultTolerant                     : False
+DeploymentErrorInfo                 : 
+ServiceDeploymentErrorMessage       : 
+DeploymentState                     : Undeployed
+TieredPerfData                      : eb1a4e7d-a27f-42ce-90b3-a7ed79d98510
+ReplicationSetting                  : 
+ReplicationStatus                   : 
+IsRecoveryVM                        : False
+IsPrimaryVM                         : False
+IsTestReplicaVM                     : False
+IsDREnabled                         : False
+DRState                             : Disabled
+DRErrors                            : {}
+HasDRError                          : False
+ClusterNonPossibleOwner             : {}
+ClusterPreferredOwner               : {}
+AvailabilitySetNames                : 
+LiveCloningEnabled                  : True
+MostRecentTaskID                    : 0b5637c4-94cb-4cfa-bf99-86e7c4ae7d3e
+MostRecentTaskUIState               : Completed
+MostRecentTask                      : Refresh virtual machine
+Location                            : C:\ClusterStorage\Volume1\arriVMTest
+CreationTime                        : 8/29/2015 6:29:17 AM
+OperatingSystem                     : Windows Server 2012 R2 Datacenter
+HasVMAdditions                      : True
+VMAddition                          : 6.3.9600.16384
+NumLockEnabled                      : False
+CPUCount                            : 1
+IsHighlyAvailable                   : True
+HAVMPriority                        : 2000
+IsDRProtectionRequired              : False
+RecoveryPointObjective              : 
+LimitCPUFunctionality               : False
+LimitCPUForMigration                : False
+Memory                              : 8192
+DynamicMemoryEnabled                : False
+DynamicMemoryMaximumMB              : 
+DynamicMemoryBufferPercentage       : 
+MemoryWeight                        : 5000
+VirtualVideoAdapterEnabled          : False
+MonitorMaximumCount                 : 
+MonitorResolutionMaximum            : 
+BootOrder                           : {CD, IdeHardDrive, PxeBoot, Floppy}
+FirstBootDevice                     : 
+SecureBootEnabled                   : 
+ComputerName                        : WIN-K4UQJQRI9UC
+UseHardwareAssistedVirtualization   : True
+SANStatus                           : {DeployVMOnClusterSharedVolume (1291)}
+CostCenter                          : 
+QuotaPoint                          : 1
+IsTagEmpty                          : False
+Tag                                 : (none)
+CustomProperties                    : {, , , ...}
+CustomProperty                      : {}
+UndoDisksEnabled                    : False
+CPUType                             : 3.60 GHz Xeon (2 MB L2 cache)
+ExpectedCPUUtilization              : 20
+DiskIO                              : 0
+NetworkUtilization                  : 0
+RelativeWeight                      : 100
+CPUReserve                          : 0
+CPUMax                              : 100
+CPUPerVirtualNumaNodeMaximum        : 24
+MemoryPerVirtualNumaNodeMaximumMB   : 29494
+VirtualNumaNodesPerSocketMaximum    : 1
+DynamicMemoryMinimumMB              : 
+NumaIsolationRequired               : False
+Generation                          : 1
+VirtualDVDDrives                    : {arriVMTest}
+VirtualHardDisks                    : {AmyVM523_disk_1}
+VirtualDiskDrives                   : {arriVMTest}
+ShareSCSIBus                        : False
+VirtualNetworkAdapters              : {arriVMTest}
+VirtualFibreChannelAdapters         : {}
+HasVirtualFibreChannelAdapters      : False
+VirtualFloppyDrive                  : arriVMTest
+VirtualCOMPorts                     : {COM1, COM2}
+VirtualSCSIAdapters                 : {arriVMTest}
+CapabilityProfile                   : 
+CapabilityProfileCompatibilityState : Compatible
+VMCheckpoints                       : {}
+HostId                              : 5da2aed4-7315-455b-88d3-d50521abb4f4
+HostType                            : VMHost
+HostName                            : newArri5038h.aidev.com
+VMHost                              : newArri5038h.aidev.com
+LibraryServer                       : 
+CloudId                             : 
+Cloud                               : 
+LibraryGroup                        : 
+GrantedToList                       : {}
+UserRoleID                          : 75700cd5-893e-4f68-ada7-50ef4668acc6
+UserRole                            : Administrator
+Owner                               : AIDEV\administrator
+ObjectType                          : VM
+Accessibility                       : Public
+Name                                : arriVMTest
+IsViewOnly                          : False
+Description                         : 
+AddedTime                           : 8/29/2015 6:29:17 AM
+ModifiedTime                        : 8/29/2015 1:07:01 PM
+Enabled                             : True
+ServerConnection                    : Microsoft.SystemCenter.VirtualMachineManager.Remoting.ServerConnection
+ID                                  : eb1a4e28-a27f-42ce-90b3-a7ed79d98510
+MarkedForDeletion                   : False
+IsFullyCached                       : False
+MostRecentTaskIfLocal               : Refresh virtual machine
+ServicingWindows                    : 
+
+MACAddress : 00:1D:D8:B7:1C:78
+
+
+

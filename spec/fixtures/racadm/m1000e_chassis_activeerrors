@@ -1,0 +1,16 @@
+Module ID     = server-4
+Severity      = Critical
+Message       = CPU 1 machine check error detected.
+-------------------------------------------------------------------------------
+Module ID     = server-4
+Severity      = Critical
+Message       = CPU 2 has an internal error (IERR).
+-------------------------------------------------------------------------------
+Module ID     = server-11
+Severity      = Critical
+Message       = A bus fatal error was detected on a component at bus 0 device 3 function 0.
+-------------------------------------------------------------------------------
+Module ID     = server-14
+Severity      = Critical
+Message       = CPU 1 machine check error detected.
+-------------------------------------------------------------------------------

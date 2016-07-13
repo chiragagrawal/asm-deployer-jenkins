@@ -1,0 +1,19 @@
+tests/test_conf_dir/ssl
+tests/test_conf_dir/master_ssl
+.vendor
+vendor
+Gemfile.lock
+*.gem
+*.log
+*~
+*.iml
+.rakeTasks
+.bundle
+.rspec
+.yardoc
+.ruby-version
+doc
+#Vim litter
+*.swo
+*.swp
+.idea

@@ -1,0 +1,155 @@
+{
+  "010112": {
+    "nsid": "010112",
+    "remote_wwpn": "21:00:00:24:ff:4a:bb:3f",
+    "local_wwpn": "20:00:00:24:ff:4a:bb:3f",
+    "port_info": "NodeSymb: [34] \"QME2572 FW:v5.09.00 DVR:v9.1.11.20\"",
+    "permanent_port": "20:14:00:27:f8:81:30:e0",
+    "device_type": "NPIV Initiator",
+    "device_alias": " ASM_JK4V5Y1_B2"
+  },
+  "010133": {
+    "nsid": "010133",
+    "remote_wwpn": "21:00:00:24:ff:46:61:3f",
+    "local_wwpn": "20:00:00:24:ff:46:61:3f",
+    "port_info": "NodeSymb: [33] \"QME2572 FW:v8.01.02 DVR:v2.1.24.0\"",
+    "permanent_port": "20:14:00:27:f8:81:30:e0",
+    "device_type": "NPIV Initiator",
+    "device_alias": ""
+  },
+  "010150": {
+    "nsid": "010150",
+    "remote_wwpn": "21:00:00:24:ff:46:61:b7",
+    "local_wwpn": "20:00:00:24:ff:46:61:b7",
+    "port_info": "NodeSymb: [43] \"QME2572 FW:v7.01.00 DVR:v8.06.00.08.07.0-k2\"",
+    "permanent_port": "20:14:00:27:f8:81:30:e0",
+    "device_type": "NPIV Initiator",
+    "device_alias": ""
+  },
+  "010b00": {
+    "nsid": "010b00",
+    "remote_wwpn": "21:00:00:24:ff:52:e6:47",
+    "local_wwpn": "20:00:00:24:ff:52:e6:47",
+    "port_info": "NodeSymb: [39] \"QLE2562 FW:v5.06.05 DVR:v911.k1.1-26vmw\"",
+    "permanent_port": "21:00:00:24:ff:52:e6:47",
+    "device_type": "Physical Initiator",
+    "device_alias": ""
+  },
+  "010e44": {
+    "nsid": "010e44",
+    "remote_wwpn": "20:01:00:0e:1e:c2:9c:61",
+    "local_wwpn": "20:00:00:0e:1e:c2:9c:61",
+    "port_info": "NodeSymb: [33] \"QME2662 FW:v7.04.00 DVR:v1.1.39.0\"",
+    "permanent_port": "20:12:00:27:f8:6f:48:5c",
+    "device_type": "NPIV Initiator",
+    "device_alias": ""
+  },
+  "010e4f": {
+    "nsid": "010e4f",
+    "remote_wwpn": "21:00:00:24:ff:4b:53:85",
+    "local_wwpn": "20:00:00:24:ff:4b:53:85",
+    "port_info": "NodeSymb: [33] \"QME2572 FW:v8.01.02 DVR:v1.1.52.0\"",
+    "permanent_port": "20:12:00:27:f8:6f:48:5c",
+    "device_type": "NPIV Initiator",
+    "device_alias": ""
+  },
+  "010f0a": {
+    "nsid": "010f0a",
+    "remote_wwpn": "20:01:00:0e:1e:c2:9c:5d",
+    "local_wwpn": "20:00:00:0e:1e:c2:9c:5d",
+    "port_info": "NodeSymb: [33] \"QME2662 FW:v7.04.00 DVR:v1.1.52.0\"",
+    "permanent_port": "20:11:00:27:f8:6f:48:5c",
+    "device_type": "NPIV Initiator",
+    "device_alias": ""
+  },
+  "011000": {
+    "nsid": "011000",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:1e",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:00",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=06 Port=02 in Controller: SN 24261 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:1e",
+    "device_type": "Physical Initiator+Target",
+    "device_alias": " Controller2_FC4"
+  },
+  "011001": {
+    "nsid": "011001",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:3c",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:02",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=06 Port=02 in Controller: SN 21852 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:1e",
+    "device_type": "NPIV Unknown(initiator/target)",
+    "device_alias": " Compellent_Bottom"
+  },
+  "011100": {
+    "nsid": "011100",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:22",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:00",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=04 Port=02 in Controller: SN 24261 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:22",
+    "device_type": "Physical Initiator+Target",
+    "device_alias": " Controller2_FC2"
+  },
+  "011101": {
+    "nsid": "011101",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:3a",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:02",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=04 Port=02 in Controller: SN 21851 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:22",
+    "device_type": "NPIV Unknown(initiator/target)",
+    "device_alias": " Compellent_storage"
+  },
+  "011200": {
+    "nsid": "011200",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:06",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:00",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=06 Port=02 in Controller: SN 24260 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:06",
+    "device_type": "Physical Initiator+Target",
+    "device_alias": "compellent"
+  },
+  "011201": {
+    "nsid": "011201",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:38",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:01",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=06 Port=02 in Controller: SN 24260 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:06",
+    "device_type": "NPIV Unknown(initiator/target)",
+    "device_alias": " Compellent_Bottom"
+  },
+  "011300": {
+    "nsid": "011300",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:0a",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:00",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=04 Port=02 in Controller: SN 24260 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:0a",
+    "device_type": "Physical Initiator+Target",
+    "device_alias": ""
+  },
+  "011301": {
+    "nsid": "011301",
+    "remote_wwpn": "50:00:d3:10:00:5e:c4:36",
+    "local_wwpn": "50:00:d3:10:00:5e:c4:01",
+    "port_info": "PortSymb: [102] \"Compellent Port QLGC FC 8Gbps; Slot=04 Port=02 in Controller: SN 24260 of Storage Center: SC8000-10-50\"",
+    "permanent_port": "50:00:d3:10:00:5e:c4:0a",
+    "device_type": "NPIV Unknown(initiator/target)",
+    "device_alias": " Compellent_Bottom"
+  },
+  "011600": {
+    "nsid": "011600",
+    "remote_wwpn": "50:06:01:61:3e:e0:39:dc",
+    "local_wwpn": "50:06:01:60:be:e0:39:dc",
+    "port_info": "PortSymb: [27] \"CLARiiON::::SPA23::FC::::::\"",
+    "permanent_port": "50:06:01:61:3e:e0:39:dc",
+    "device_type": "Physical Target",
+    "device_alias": " EMX_VNX"
+  },
+  "011700": {
+    "nsid": "011700",
+    "remote_wwpn": "50:06:01:68:3e:e0:39:dc",
+    "local_wwpn": "50:06:01:60:be:e0:39:dc",
+    "port_info": "PortSymb: [27] \"CLARiiON::::SPB22::FC::::::\"",
+    "permanent_port": "50:06:01:68:3e:e0:39:dc",
+    "device_type": "Physical Target",
+    "device_alias": " EMX_VNX"
+  }
+}

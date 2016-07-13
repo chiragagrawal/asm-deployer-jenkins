@@ -1,0 +1,62 @@
+#!ipxe
+
+<%- network_config.get_partitions("PXE").each_with_index do |partition, nic_i|
+      network = partition.networkObjects.find { |p| p["type"] == "PXE" }
+      static = network.static && network.staticNetworkConfiguration
+      nic = "nic%d" % nic_i
+      missing_label = "%s_missing" % nic
+      configure_label = "%s_configure" % nic
+      err_label = "%s_err" % nic
+      end_label = "%s_end" % nic
+-%>
+:<%= nic %>
+
+echo Configuring <%= partition.fqdd %> (<%= partition.mac_address.downcase %>) ...
+
+# Set <%= nic %> to the device (net0, etc) with mac address <%= partition.mac_address.downcase %>
+  <%- 0.upto(n_nics - 1) do |net_i| -%>
+iseq ${net<%= net_i %>/mac} <%= partition.mac_address.downcase %> && set <%= nic %> net<%= net_i %> ||
+  <%- end -%>
+
+# Skip this partition if we did not find a device with matching mac address
+isset <%= nic %> || goto <%= missing_label %>
+goto <%= configure_label %>
+
+:<%= missing_label %>
+echo <%= partition.fqdd %> (<%= partition.mac_address.downcase %>) not found, skipping
+goto <%= end_label %>
+
+:<%= configure_label %>
+
+    <%- if static -%>
+echo Configuring static IP <%= network.staticNetworkConfiguration.ipAddress %> on ${<%= nic %>}
+ifopen ${<%= nic %>} || goto <%= err_label %>
+set next-server <%= ASM::Util.get_preferred_ip(network.staticNetworkConfiguration.ipAddress) %>
+set ${<%= nic %>}/ip <%= network.staticNetworkConfiguration.ipAddress %>
+set ${<%= nic %>}/netmask <%= network.staticNetworkConfiguration.subnet %>
+set ${<%= nic %>}/gateway <%= network.staticNetworkConfiguration.gateway %>
+      <%- if network.staticNetworkConfiguration.primaryDns -%>
+set ${<%= nic %>}/dns <%= network.staticNetworkConfiguration.primaryDns %>
+        <%- if network.staticNetworkConfiguration.dnsSuffix -%>
+set ${<%= nic %>}/domain <%= network.staticNetworkConfiguration.dnsSuffix %>
+        <%- end -%>
+      <%- end -%>
+    <%- else -%>
+echo Configuring DHCP on ${<%= nic %>}
+ifconf -c dhcp ${<%= nic %>} || goto <%= err_label %>
+    <%- end -%>
+
+chain http://${next-server}:8080/svc/boot?${<%= nic %>}=${${<%= nic %>}/mac:hexhyp}&dhcp_mac=${${<%= nic %>}/mac:hexhyp}&serial=${serial}&asset=${asset}&uuid=${uuid} && echo successfully completed the chain-loaded script; booting locally with 'exit' && exit || goto <%= err_label %>
+
+:<%= err_label %>
+
+echo Failed to boot from <%= partition.fqdd %>, continuing..."
+ifclose ${<%= nic %>}
+
+:<%= end_label %>
+<%- end -%>
+
+:failed
+echo Failed to boot
+sleep 60
+reboot

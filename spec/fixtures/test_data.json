@@ -1,0 +1,283 @@
+{
+    "id": "8080",
+    "deploymentDescription": "",
+    "deploymentName": "Test Deployment",
+    "serviceTemplate": {
+        "id": "8080-template",
+        "templateName": "Test Template",
+        "components": [
+            {
+                "id": "test-8080-1",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-1",
+                "name": "Test 1",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-1",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-2",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-2",
+                "name": "Test 2",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-2",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-3",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-3",
+                "name": "Test 3",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-3",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-4",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-4",
+                "name": "Test 4",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-4",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-5",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-5",
+                "name": "Test 5",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-5",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-6",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-6",
+                "name": "Test 6",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-6",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-7",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-7",
+                "name": "Test 7",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-7",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "test-8080-8",
+                "componentID": "b6f986fd-c7c9-4b05-9dc8-a54edee0a439",
+                "puppetCertName": "test-8080-8",
+                "name": "Test 8",
+                "type": "TEST",
+                "resources": [
+                    {
+                        "id": "notify",
+                        "displayName": "Notification",
+                        "parameters": [
+                            {
+                                "id": "message",
+                                "value": "This is a test message",
+                                "type": "STRING",
+                                "displayName": "Test Message",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false,
+                                "min": 0,
+                                "max": 0
+                            },
+                            {
+                                "id": "title",
+                                "value": "test-8080-8",
+                                "type": "STRING",
+                                "required": true,
+                                "requiredAtDeployment": false,
+                                "hideFromTemplate": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

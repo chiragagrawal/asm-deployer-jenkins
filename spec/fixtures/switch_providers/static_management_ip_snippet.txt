@@ -1,0 +1,6 @@
+!
+interface ManagementEthernet 0/0
+ ip address 1.2.3.4/24
+ no shutdown
+!
+end
